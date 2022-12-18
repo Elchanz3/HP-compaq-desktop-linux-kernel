@@ -45,6 +45,13 @@ choice
 	help
 	 1000 Hz is the preferred choice for desktop systems and other
 	 systems requiring fast interactive responses to events.
+	 
+        config HZ_11500
+		bool "11500 HZ"
+	help
+	 11500 Hz is my custom kernel_hz i made this for a high ultra low latency,
+	 this can provide a good responses EX: copy files or run programs, if you
+	 use HD like me this Hz can give you an little boost on your HD.
 
 endchoice
 
@@ -54,6 +61,7 @@ config HZ
 	default 250 if HZ_250
 	default 300 if HZ_300
 	default 1000 if HZ_1000
+	default 11500 if HZ_11500
 
 config SCHED_HRTICK
 	def_bool HIGH_RES_TIMERS
